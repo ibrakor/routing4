@@ -1,0 +1,19 @@
+<table class="table table-dark">
+  <thead>
+  <th scope="col">
+    Código
+  </th>
+  <th scope="col">
+    Artículo
+  </th>
+  <th scope="col">
+    Precio
+  </th>
+  </thead>
+  <tr *ngFor="let producto of this.showProducts()">
+    <td>{{producto.articul}}</td>
+    <td>{{producto.cantidad}}</td>
+    <td>{{producto.precio}}</td>
+    <button routerLink="/" class="btn btn-primary">Añadir</button>
+  </tr>
+</table>
