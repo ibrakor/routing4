@@ -10,7 +10,7 @@
       Precio
     </th>
   </thead>
-  <tr *ngFor="let producto of this.showProducts()" >
+  <tr *ngFor="let producto of this.showProducts()" routerLink="/modificar/{{producto.codigo}}">
 
     <td>{{producto.codigo}}</td>
     <td>{{producto.articul}}</td>

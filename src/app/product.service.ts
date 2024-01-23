@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ProductModel} from "./components/add/productModel";
 import {PRODUCTS, PRODUCTSTOADD} from "./components/PRODUCTOSMOCK";
 
@@ -26,4 +26,16 @@ export class ProductService {
       }
     }
   }
+
+  deleteProductById(id: number) {
+    const index = this.productos.findIndex(product => product.codigo === id);
+
+    if (index !== -1) {
+      this.productos.splice(index, 1);
+      alert(`Producto con ID ${id} eliminado correctamente.`);
+    } else {
+      alert(`No se encontró un producto con ID ${id}. No se realizó ninguna acción.`);
+    }
+  }
+
 }

@@ -11,9 +11,10 @@
   </th>
   </thead>
   <tr >
-    <td [ngModel]="producto.articul"> </td>
-    <td>{{producto.cantidad}}</td>
-    <td>{{producto.precio}}</td>
-    <button routerLink="/" class="btn btn-primary">Añadir</button>
+    <td><input [(ngModel)]="producto.codigo"></td>
+    <td><input [(ngModel)]="producto.articul"></td>
+    <td><input [(ngModel)]="producto.precio"></td>
+    <button routerLink="/" class="btn btn-primary">Modificar</button>
+    <button routerLink="/" class="btn btn-danger m-2" (click)="delete()">Eliminar</button>
   </tr>
 </table>
