@@ -11,6 +11,7 @@ import {ProductService} from "../../product.service";
 export class ModificarComponent implements OnInit{
 
   producto: ProductModel
+  accion : number
 
   constructor(
     private route: ActivatedRoute,
@@ -25,10 +26,13 @@ export class ModificarComponent implements OnInit{
   }
 
   delete() {
-    this.productService.deleteProductById(this.producto.codigo)
+    if (this.accion==1){
+      this.productService.deleteProductById(this.producto.codigo)
+    }
   }
 
   ngOnInit(): void {
+    this.accion = parseInt(this.route.snapshot.queryParams['accion'])
     this.getProduct()
   }
 }
